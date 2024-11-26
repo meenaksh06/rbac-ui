@@ -12,7 +12,6 @@ This is the frontend of the project, built using React. It connects with the bac
 ## Getting Started
 
 ### Prerequisites
-- Node.js >= 16
 - npm (Node Package Manager)
 
 ### Installation
