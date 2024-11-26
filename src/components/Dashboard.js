@@ -4,26 +4,21 @@ import { useAppContext } from "../context/AppContext";
 const Dashboard = () => {
   const { posts, setPosts, setCurrentView } = useAppContext();
 
-  // State for Modals
   const [isPostModalOpen, setIsPostModalOpen] = useState(false);
 
-  // Form States
   const [postForm, setPostForm] = useState({ title: "", description: "", index: null });
 
-  // Handlers
   const handleLogout = () => setCurrentView("login");
 
-  // Add or Update Post
   const handleSavePost = () => {
     if (postForm.title.trim() && postForm.description.trim()) {
       if (postForm.index !== null) {
-        // Update existing post
+
         const updatedPosts = posts.map((post, index) =>
           index === postForm.index ? { title: postForm.title, description: postForm.description } : post
         );
         setPosts(updatedPosts);
       } else {
-        // Add new post
         setPosts([...posts, { title: postForm.title, description: postForm.description }]);
         alert("Post added successfully!");
       }
@@ -32,13 +27,11 @@ const Dashboard = () => {
     }
   };
 
-  // Open Modal for Editing
   const openEditModal = (index) => {
     setPostForm({ ...posts[index], index });
     setIsPostModalOpen(true);
   };
 
-  // Delete Post
   const handleDeletePost = (index) => {
     const updatedPosts = posts.filter((_, postIndex) => postIndex !== index);
     setPosts(updatedPosts);
@@ -46,7 +39,6 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
       <header className="bg-blue-600 text-white py-4 px-6 flex flex-col md:flex-row justify-between items-center shadow-md">
         <h1 className="text-2xl font-bold mb-2 md:mb-0">Admin Dashboard</h1>
         <button
@@ -57,7 +49,6 @@ const Dashboard = () => {
         </button>
       </header>
 
-      {/* Main Content */}
       <main className="p-4 sm:p-6">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
           <h2 className="text-xl font-bold text-gray-700 mb-4 sm:mb-0">Your Posts</h2>
@@ -99,7 +90,6 @@ const Dashboard = () => {
         )}
       </main>
 
-      {/* Post Modal */}
       {isPostModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition">
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-4">

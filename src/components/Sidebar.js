@@ -14,7 +14,6 @@ const Sidebar = () => {
 
   return (
     <div className="relative">
-      {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="md:hidden fixed top-4 right-4 z-20 p-2 bg-blue-700 text-white rounded-md shadow-lg"
@@ -22,7 +21,6 @@ const Sidebar = () => {
         {isOpen ? "Close" : "Menu"}
       </button>
 
-      {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 h-screen bg-blue-700 text-white p-4 z-10 transition-transform transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
@@ -42,7 +40,7 @@ const Sidebar = () => {
               }`}
               onClick={() => {
                 setCurrentView(item.view);
-                if (!isOpen) setIsOpen(false); // Close menu on small screens
+                if (!isOpen) setIsOpen(false); 
               }}
             >
               {item.name}

@@ -53,7 +53,6 @@ const Permissions = () => {
       </header>
 
       <div className="bg-white shadow rounded-lg p-4 sm:p-6">
-        {/* Add Permission Button */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
           <h2 className="text-lg sm:text-xl font-semibold text-gray-700">Permissions List</h2>
           <button
@@ -68,7 +67,6 @@ const Permissions = () => {
           </button>
         </div>
 
-        {/* Permissions List */}
         {permissions.length > 0 ? (
           <div className="space-y-4">
             {permissions.map((permission, index) => (
@@ -116,7 +114,6 @@ const Permissions = () => {
         )}
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
           <div className="bg-white w-full max-w-lg p-6 rounded-lg shadow-lg">

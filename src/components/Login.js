@@ -9,7 +9,6 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Example logic for authentication
     if (userId === 'admin@123' && email === 'admin@gmail.com' && password === '1234') {
       setCurrentView('dashboard');
     } else {
@@ -24,13 +23,11 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-400 to-blue-600 p-4">
       <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-8 md:p-12">
-        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-800">Welcome Back!</h1>
           <p className="text-gray-600 mt-2">Log in to access your dashboard</p>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label htmlFor="userId" className="block text-sm font-medium text-gray-700">
@@ -77,7 +74,6 @@ const Login = () => {
             />
           </div>
 
-          {/* Forgot Password */}
           <div className="text-right mb-6">
             <button
               type="button"
@@ -88,7 +84,6 @@ const Login = () => {
             </button>
           </div>
 
-          {/* Login Button */}
           <button
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -97,7 +92,6 @@ const Login = () => {
           </button>
         </form>
 
-        {/* Mock Credentials */}
         <div className="mt-6 bg-gray-100 p-4 rounded-lg">
           <p className="text-sm text-gray-700">Mock Credentials:</p>
           <p className="text-sm text-gray-700">User ID: <strong>admin@123</strong></p>

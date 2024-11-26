@@ -14,7 +14,6 @@ const Users = () => {
   const [currentUserIndex, setCurrentUserIndex] = useState(null);
   const { users, setUsers } = useAppContext();
 
-  // Add User
   const handleAddUser = () => {
     if (
       newUser.name.trim() &&
@@ -37,7 +36,6 @@ const Users = () => {
     }
   };
 
-  // Edit User
   const handleEditUser = () => {
     if (
       newUser.name.trim() &&
@@ -62,13 +60,11 @@ const Users = () => {
     }
   };
 
-  // Delete User
   const handleDeleteUser = (index) => {
     const updatedUsers = users.filter((_, i) => i !== index);
     setUsers(updatedUsers);
   };
 
-  // Open Edit Modal
   const openEditModal = (index) => {
     setCurrentUserIndex(index);
     setNewUser(users[index]);
@@ -83,7 +79,6 @@ const Users = () => {
       </header>
 
       <div className="bg-white shadow rounded-lg p-6">
-        {/* Add User Button */}
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-semibold text-gray-700">Users List</h2>
           <button
@@ -94,7 +89,6 @@ const Users = () => {
           </button>
         </div>
 
-        {/* Users List */}
         {users.length > 0 ? (
           <div className="space-y-4">
             {users.map((user, index) => (
@@ -151,7 +145,6 @@ const Users = () => {
         )}
       </div>
 
-      {/* Modal for Adding/Editing User */}
       {(isModalOpen || isEditModalOpen) && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
           <div className="bg-white w-full max-w-lg p-6 rounded-lg shadow-lg">
